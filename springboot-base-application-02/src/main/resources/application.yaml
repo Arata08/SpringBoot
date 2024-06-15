@@ -1,0 +1,33 @@
+# server.port=80
+# server.servlet.context-path=/boot
+
+# yaml有层次,可以继承的配置文件格式
+# key:
+# 缩进key:   -> key.key，value前面要有空格
+
+# springboot规定的配置,有特殊含义
+server:
+  port: 80
+  servlet:
+    context-path: /boot
+
+# 数据库连接信息     测试库  开发的库  上线
+
+#集合前用 - 表示集合
+cx:
+  user:
+    name: chenxing
+    password: 123456
+    gfs:
+      - 高圆圆
+      - 范冰冰
+
+
+spring:
+  profiles:
+    active: test,dev # 激活外部的配置  application-test | application-dev
+      # 外部配置的key和application key重复  外部的覆盖内部!!这里test生效
+    # jar  --active=test
+#    如果设置了spring.profiles.active，并且和application有重叠属性，以active设置优先。
+#
+#    如果设置了spring.profiles.active，和application无重叠属性，application设置依然生效！
